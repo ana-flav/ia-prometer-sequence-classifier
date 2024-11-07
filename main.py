@@ -13,7 +13,7 @@ class PromoterSequenceClassifier:
         self.column_names = column_names
         self.dataset = None
         self.df_nucleotides = None
-        self.model = MLPClassifier(hidden_layer_sizes=(50,), max_iter=100, random_state=1, solver='adam', learning_rate_init=0.01)
+        self.model = MLPClassifier(hidden_layer_sizes=(30, 30), max_iter=100, random_state=1, solver='adam', learning_rate_init=0.01)
 
     def load_data(self) -> None:
         self.dataset = pd.read_csv(self.file_path, names=self.column_names, delimiter=',', engine='python')
